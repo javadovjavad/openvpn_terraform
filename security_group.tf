@@ -4,7 +4,7 @@ resource "aws_security_group" "instance" {
   description = "OpenVPN security group"
 
 dynamic "ingress"{
-  for_each = ["22","443","943",945]
+  for_each = ["22","80","443","943",945]
   content {
       description      = "ingress SSH from VPC"
       from_port        = ingress.value
